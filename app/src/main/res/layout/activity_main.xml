@@ -15,15 +15,16 @@
             android:id="@+id/et_cari"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="6"/>
+            android:layout_weight="5"
+            android:inputType="text"
+            tools:ignore="LabelFor" />
         <Button
             android:id="@+id/btn_cari"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:text="@string/btn_cari"/>
     </LinearLayout>
-
-
 
     <ProgressBar
         android:id="@+id/pg_waiting"
@@ -31,5 +32,12 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_hasil"
+        android:layout_below="@id/ll_cari"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </android.support.v7.widget.RecyclerView>
 
 </RelativeLayout>

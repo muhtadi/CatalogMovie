@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Catalog Movie Project</string>
+    <string name="btn_cari">Cari</string>
 </resources>
