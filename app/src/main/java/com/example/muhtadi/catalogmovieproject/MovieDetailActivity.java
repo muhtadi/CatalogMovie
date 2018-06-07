@@ -32,7 +32,7 @@ public class MovieDetailActivity extends AppCompatActivity {
         tvOverview = (TextView) findViewById(R.id.tv_overview);
 
         Intent movieDetailIntent = new Intent();
-        backdropUrl = movieDetailIntent.getStringExtra("bcakdrop");
+        backdropUrl = movieDetailIntent.getStringExtra("backdrop");
         detailBackdrop = imageUrl+backdropUrl;
         detailTitle = movieDetailIntent.getStringExtra("title");
         detailVote = movieDetailIntent.getDoubleExtra("vote",0.0);
