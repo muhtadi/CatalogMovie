@@ -20,6 +20,7 @@ public class MovieAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
     private List<MoviePOJO.ResultArray> movieListResult;
     private int tampilanList;
     private Context context;
+    RecyclerClick recyclerClick;
 
     public MovieAdapter(List<MoviePOJO.ResultArray> movieListResult, int tampilanList, Context context) {
         this.movieListResult = movieListResult;
@@ -37,7 +38,7 @@ public class MovieAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
             public void onClick(View v) {
                 int adapterPosition = viewHolder.getAdapterPosition();
                 if (adapterPosition != RecyclerView.NO_POSITION){
-                    onItemClick(adapterPosition, viewHolder.itemView);
+                    recyclerClick.onItemClick(adapterPosition, viewHolder.itemView);
                 }
             }
         });
@@ -75,9 +76,7 @@ public class MovieAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
         return 0;
     }
 
-    void onItemClick(int position, View view) {
 
-    }
 
     static class ViewHolder extends RecyclerView.ViewHolder{
 
@@ -95,4 +94,8 @@ public class MovieAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
             tvRelease = (TextView)itemView.findViewById(R.id.tv_release);
         }
     }
+}
+
+interface RecyclerClick{
+    void onItemClick(int position, View view);
 }
