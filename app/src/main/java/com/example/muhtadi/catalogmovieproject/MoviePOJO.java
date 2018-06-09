@@ -28,18 +28,18 @@ public class MoviePOJO {
         this.total_pages = total_pages;
     }
 
-    public int getTotal_result() {
-        return total_result;
-    }
-
-    public void setTotal_result(int total_result) {
-        this.total_result = total_result;
-    }
-
     private int page;
     private List<ResultArray> result;
     private int total_pages;
-    private int total_result;
+    private int total_results;
+
+    public int getTotal_results() {
+        return total_results;
+    }
+
+    public void setTotal_results(int total_results) {
+        this.total_results = total_results;
+    }
 
     /*
         poster_path : string or null
@@ -57,6 +57,7 @@ public class MoviePOJO {
         video : boolean
         vote_average : number
      */
+
     public static class ResultArray{
 
         public String getPoster_path() {

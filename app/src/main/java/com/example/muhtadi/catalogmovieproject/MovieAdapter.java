@@ -95,7 +95,3 @@ public class MovieAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
         }
     }
 }
-
-interface RecyclerClick{
-    void onItemClick(int position, View view);
-}
