@@ -17,8 +17,8 @@ public class MovieDetailActivity extends AppCompatActivity {
     TextView tvTitleDetail, tvVoteDetail, tvReleaseDetail, tvOverview;
     String imageUrl = "http://image.tmdb.org/t/p/w342/";
 
-    String detailBackdrop, detailTitle, detailRelease, detailOverview, backdropUrl;
-    Double detailVote;
+    //String detailBackdrop, detailTitle, detailRelease, detailOverview, backdropUrl;
+    //Double detailVote;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,15 +31,15 @@ public class MovieDetailActivity extends AppCompatActivity {
         tvReleaseDetail = (TextView) findViewById(R.id.tv_release_detail);
         tvOverview = (TextView) findViewById(R.id.tv_overview);
 
-        Intent movieDetailIntent = new Intent();
-        backdropUrl = movieDetailIntent.getStringExtra("backdrop");
-        detailBackdrop = imageUrl+backdropUrl;
-        detailTitle = movieDetailIntent.getStringExtra("title");
-        detailVote = movieDetailIntent.getDoubleExtra("vote",0.0);
-        detailRelease = movieDetailIntent.getStringExtra("release");
-        detailOverview = movieDetailIntent.getStringExtra("overview");
+        Intent movieDetailIntent = getIntent();
+        final String backdropUrl = movieDetailIntent.getStringExtra("backdrop");
+        final String detailBackdrop = imageUrl+backdropUrl;
+        final String detailTitle = movieDetailIntent.getStringExtra("title");
+        final Double detailVote = movieDetailIntent.getDoubleExtra("vote",0.0);
+        final String detailRelease = movieDetailIntent.getStringExtra("release");
+        final String detailOverview = movieDetailIntent.getStringExtra("overview");
 
-        Glide.with(this).load(detailBackdrop).into(ivBackdrop);
+        Glide.with(this).load(detailBackdrop).placeholder(R.drawable.ic_broken_image_black_24dp).into(ivBackdrop);
         tvTitleDetail.setText(detailTitle);
         tvVoteDetail.setText(String.valueOf(detailVote));
         tvReleaseDetail.setText(detailRelease);

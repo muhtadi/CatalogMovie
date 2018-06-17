@@ -13,11 +13,11 @@ public class MoviePOJO {
     }
 
     public List<ResultArray> getResult() {
-        return result;
+        return results;
     }
 
     public void setResult(List<ResultArray> result) {
-        this.result = result;
+        this.results = result;
     }
 
     public int getTotal_pages() {
@@ -29,7 +29,7 @@ public class MoviePOJO {
     }
 
     private int page;
-    private List<ResultArray> result;
+    private List<ResultArray> results;
     private int total_pages;
     private int total_results;
 
