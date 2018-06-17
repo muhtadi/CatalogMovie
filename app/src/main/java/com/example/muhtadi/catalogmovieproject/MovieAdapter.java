@@ -50,7 +50,6 @@ public class MovieAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
 
         final MoviePOJO.ResultArray resultArray = movieListResult.get(position);
-        //final MovieAdapter viewHolder = (mViewHolder) holder;
         final MovieAdapter.mViewHolder mviewHolder = (MovieAdapter.mViewHolder) holder;
         final String sourcePoster = resultArray.getPoster_path();
         final String posterImage = url_image+sourcePoster;
@@ -97,11 +96,11 @@ public class MovieAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
         public mViewHolder(View itemView) {
             super(itemView);
 
-            linearLayout = (LinearLayout)itemView.findViewById(R.id.ll_list);
-            imageView = (ImageView)itemView.findViewById(R.id.iv_poster);
-            tvTitle = (TextView)itemView.findViewById(R.id.tv_title);
-            tvVote = (TextView)itemView.findViewById(R.id.tv_vote);
-            tvRelease = (TextView)itemView.findViewById(R.id.tv_release);
+            linearLayout = itemView.findViewById(R.id.ll_list);
+            imageView = itemView.findViewById(R.id.iv_poster);
+            tvTitle = itemView.findViewById(R.id.tv_title);
+            tvVote = itemView.findViewById(R.id.tv_vote);
+            tvRelease = itemView.findViewById(R.id.tv_release);
         }
     }
 }

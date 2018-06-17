@@ -17,19 +17,16 @@ public class MovieDetailActivity extends AppCompatActivity {
     TextView tvTitleDetail, tvVoteDetail, tvReleaseDetail, tvOverview;
     String imageUrl = "http://image.tmdb.org/t/p/w342/";
 
-    //String detailBackdrop, detailTitle, detailRelease, detailOverview, backdropUrl;
-    //Double detailVote;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_movie_detail);
 
-        ivBackdrop = (ImageView)findViewById(R.id.iv_backdrop);
-        tvTitleDetail = (TextView) findViewById(R.id.tv_title_detail);
-        tvVoteDetail = (TextView) findViewById(R.id.tv_vote_detail);
-        tvReleaseDetail = (TextView) findViewById(R.id.tv_release_detail);
-        tvOverview = (TextView) findViewById(R.id.tv_overview);
+        ivBackdrop = findViewById(R.id.iv_backdrop);
+        tvTitleDetail = findViewById(R.id.tv_title_detail);
+        tvVoteDetail = findViewById(R.id.tv_vote_detail);
+        tvReleaseDetail = findViewById(R.id.tv_release_detail);
+        tvOverview = findViewById(R.id.tv_overview);
 
         Intent movieDetailIntent = getIntent();
         final String backdropUrl = movieDetailIntent.getStringExtra("backdrop");

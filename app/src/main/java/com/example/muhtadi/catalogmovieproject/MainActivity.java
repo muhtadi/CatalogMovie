@@ -29,9 +29,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        editText = (EditText)findViewById(R.id.et_cari);
-        button = (Button)findViewById(R.id.btn_cari);
-        progressBar = (ProgressBar)findViewById(R.id.pg_waiting);
+        editText = findViewById(R.id.et_cari);
+        button = findViewById(R.id.btn_cari);
+        progressBar = findViewById(R.id.pg_waiting);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,13 +56,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<MoviePOJO> call, Response<MoviePOJO> response) {
                 MoviePOJO data = response.body();
-                //Log.d("test", "MyMovie: sampe sini bisa ");
                 if (data.getResult().size()==0) {
                     Toast.makeText(getApplicationContext(), "maaf data yang anda cari tidak ditemukan", Toast.LENGTH_SHORT).show();
                     progressBar.setVisibility(View.GONE);
                 }else {
                     recyclerView.setAdapter(new MovieAdapter(data.getResult(), R.layout.movie_list_item, getApplicationContext()));
-                    //Log.e(TAG, "onResponse: hasil pemanggilan"+ call);
                     progressBar.setVisibility(View.GONE);
                 }
 
